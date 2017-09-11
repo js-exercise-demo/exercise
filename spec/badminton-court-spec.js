@@ -96,7 +96,7 @@ describe('badminton court', function () {
       bookSubtotalD:[]
     };
     let expected = [
-      { itemTotal: [{ ele: Object({ userId: 'U002', date: '2017-08-01', time: '13:00~15:00', site: 'A' }), subTotal: 200 },
+      { itemTotal: [{ ele: { userId: 'U002', date: '2017-08-01', time: '13:00~15:00', site: 'A' }, subTotal: 200 },
        { ele: { userId: 'U002', date: '2017-08-01', time: '19:00~22:00', site: 'A' }, subTotal: 200 },
         { ele:{ userId: 'U002', date: '2017-08-01', time: '19:00~22:00', site: 'A', cancel: 'C' }, subTotal: 100 } ],
         total: 500, site: 'A' },
@@ -117,7 +117,7 @@ describe('badminton court', function () {
       { itemTotal: [  ], total: 0, site: 'D' }];
     let expected = {
       bookItemTotal:[
-        { itemTotal: [{ ele: Object({ userId: 'U002', date: '2017-08-01', time: '13:00~15:00', site: 'A' }), subTotal: 200 },
+        { itemTotal: [{ ele: { userId: 'U002', date: '2017-08-01', time: '13:00~15:00', site: 'A' }, subTotal: 200 },
           { ele: { userId: 'U002', date: '2017-08-01', time: '19:00~22:00', site: 'A' }, subTotal: 200 },
           { ele:{ userId: 'U002', date: '2017-08-01', time: '19:00~22:00', site: 'A', cancel: 'C' }, subTotal: 100 } ],
           total: 500, site: 'A' },
@@ -132,7 +132,7 @@ describe('badminton court', function () {
   it('should printText',function () {
     let courtCharge = {
       bookItemTotal:[
-        { itemTotal: [{ ele: Object({ userId: 'U002', date: '2017-08-01', time: '13:00~15:00', site: 'A' }), subTotal: 200 },
+        { itemTotal: [{ ele: { userId: 'U002', date: '2017-08-01', time: '13:00~15:00', site: 'A' }, subTotal: 200 },
           { ele: { userId: 'U002', date: '2017-08-01', time: '19:00~22:00', site: 'A' }, subTotal: 200 },
           { ele:{ userId: 'U002', date: '2017-08-01', time: '19:00~22:00', site: 'A', cancel: 'C' }, subTotal: 100 } ],
           total: 500, site: 'A' },
