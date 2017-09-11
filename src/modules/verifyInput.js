@@ -26,7 +26,7 @@ function verifyInput(input){
         return true;
       }
       else{
-        console.log("Error: the booking is invalid!");
+        console.log("Error: the booking conflicts with existing bookings!");
         return false;
       }
     }
@@ -37,7 +37,7 @@ function verifyInput(input){
           return true;
         }
         else{
-          console.log("Error: the booking is invalid!");
+          console.log("Error: the booking being cancelled does not exist!");
           return false;
         }
       }

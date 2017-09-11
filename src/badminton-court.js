@@ -10,12 +10,9 @@ let rl = readline.createInterface({
 rl.on('line', (input) => {
     if(input != ""){
       verifyInput(input);
-
     }
     else {
-      console.log("aa");
-      earnings();
+      earnings.main();
       rl.close()
     }
 });
-

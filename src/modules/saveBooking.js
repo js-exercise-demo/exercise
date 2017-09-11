@@ -10,18 +10,18 @@ function saveBooing(input){
   let start = parseInt(reserveInformation[2].slice(0,2));
   let end = parseInt(reserveInformation[2].slice(6,8));
   let cancel = reserveInformation[4];
-  let tag;
+
   if(reserveInformation.length === 4){
     if(bookingArr.length === 0){
       bookingArr.push({userId,date,time,site});
-      tag = "true";
+      return true;
     }else{
       const sameDateArr = bookingArr.filter((ele) => {
         return date === ele.date && site === ele.site;
       });
       if(sameDateArr.length === 0){
         bookingArr.push({userId,date,time,site});
-        tag = 'true';
+        return true;
       }
       else{
         for(var i = 0; i < sameDateArr.length; i++) {
@@ -30,9 +30,9 @@ function saveBooing(input){
             let endTime = parseInt(sameDateArr[i].time.slice(6, 8));
             if (end <= startTime || endTime <= start) {
               bookingArr.push({userId, date, time, site});
-              tag = 'true';
+              return true;
             } else {
-              tag = 'false';
+              return false;
             }
           }
         }
@@ -43,17 +43,13 @@ function saveBooing(input){
         for(let i = 0; i < bookingArr.length; i++){
           if(userId === bookingArr[i].userId && date === bookingArr[i].date && time === bookingArr[i].time && site === bookingArr[i].site ){
             bookingArr.splice(i,1);
-            tag = 'true';
             cancelArr.push({userId,date,time,site,cancel});
-            break;
+            return true;
           }
-          // else{
-          //   tag = "false"
-          // }
-        }
 
+        }
+        return false;
     }
-    return tag;
 }
 
 module.exports = {
