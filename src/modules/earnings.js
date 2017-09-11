@@ -194,9 +194,9 @@ function main() {
   let itemSubtotal = sortBookSubtotal(reserveSubtotal);
   let bookItemTotal = getSiteTotal(itemSubtotal);
   let courtCharge = getCharge(bookItemTotal);
-  let string = printCourtCharge(courtCharge);
-  console.log(string);
-  return string;
+  let chargeText = printCourtCharge(courtCharge);
+  console.log(chargeText);
+  return chargeText;
 }
 
 module.exports = {
